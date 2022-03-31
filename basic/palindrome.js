@@ -1,10 +1,11 @@
-function isPalindrome(str) {
-    let reversed = str.split("").reverse().join("");
-    if(str === reversed) {
-        return true;
-    }else {
-        return false;
+function palindrome(str) {
+    str = str.toLowerCase();
+    let len = str.length;
+    for (let i = 0; i < len / 2; i++) {
+        if (str[i] !== str[len - 1 - i]) {
+            return false;
+        }
     }
+    return true;
 }
-
-console.log(isPalindrome("omo"));
+console.log(palindrome("maDam"));
